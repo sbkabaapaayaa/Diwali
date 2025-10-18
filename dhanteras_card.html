@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <title>धनतेरस की शुभकामनाएं - रामनारायण मीणा</title>
+  <meta name="description" content="धनतेरस और दिवाली की शुभकामनाएं — रामनारायण मीणा" />
+  <style>
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', Arial;
+      background: radial-gradient(circle at 20% 15%, #2b0b3d 0%, #040004 50%);
+      color:#fff;
+      overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
+    }
+
+    /* Container sized for mobile-friendly sharing (9:16 and 1:1 adaptable) */
+    .card{
+      width:100%;
+      max-width:720px; /* good for mobile */
+      aspect-ratio: 9 / 16; /* tall video-friendly */
+      background: linear-gradient(180deg, rgba(255,200,50,0.03), rgba(0,0,0,0.2));
+      border-radius:16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.7), inset 0 1px 0 rgba(255,255,255,0.02);
+      position:relative;
+      overflow:hidden;
+    }
+
+    /* Rangoli (SVG placed) */
+    .rangoli{
+      position:absolute;left:50%;transform:translateX(-50%);bottom:8%;width:86%;opacity:0.9;pointer-events:none;
+    }
+
+    /* Animated diyas */
+    .diya{
+      position:absolute;bottom:6%;width:70px;height:70px;left:12%;background:url('https://i.ibb.co/VwKZxP2/diya.gif') center/contain no-repeat;filter:drop-shadow(0 6px 8px rgba(0,0,0,0.6));
+      animation: floaty 3.5s ease-in-out infinite;
+    }
+    .diya.d2{left:auto;right:12%;transform:scaleX(-1);}
+    @keyframes floaty{0%{transform:translateY(0)}50%{transform:translateY(-10px)}100%{transform:translateY(0)}}
+
+    /* Fireworks canvas covers card */
+    canvas.fireworks{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+
+    /* Greeting text */
+    .content{
+      position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;text-align:center;
+    }
+    .message{
+      color:#fff;max-width:92%;backdrop-filter: blur(0px);border-radius:12px;line-height:1.6;font-size:20px;
+      text-shadow: 0 0 18px rgba(255,200,64,0.12), 0 2px 12px rgba(0,0,0,0.6);
+      transform:translateY(8px);
+      opacity:0;
+      transition:opacity 1s ease, transform 1s ease;
+    }
+
+    /* Warm glowing style for specific portions */
+    .message strong{color: #ffd27a;text-shadow:0 0 22px rgba(255,210,120,0.9);}
+
+    /* Glowing container for the whole text */
+    .glow{
+      padding:18px 22px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(0,0,0,0.08));
+      box-shadow: 0 10px 30px rgba(255,160,30,0.06), inset 0 1px 0 rgba(255,255,255,0.02);
+      border:1px solid rgba(255,200,60,0.06);
+    }
+
+    /* Soft warm text glow effect */
+    .warm-glow{
+      font-weight:600;color:#fff;font-size:18px;line-height:1.7;text-align:center;letter-spacing:0.2px;
+      text-shadow: 0 0 12px rgba(255,200,64,0.85), 0 0 26px rgba(255,140,10,0.25);
+    }
+
+    /* Sparkles */
+    .sparkles{position:absolute;inset:0;pointer-events:none}
+    .spark{position:absolute;width:8px;height:8px;border-radius:50%;background:radial-gradient(circle,#fff,#ffd26b);opacity:0;transform:scale(0.6);box-shadow:0 0 8px rgba(255,220,120,0.9);animation: pop 2.4s linear infinite}
+    @keyframes pop{0%{opacity:0;transform:scale(0.4)}20%{opacity:1;transform:scale(1.0)}80%{opacity:0.2;transform:scale(0.8)}100%{opacity:0}}
+
+    /* Floating light orbs */
+    .float-orb{position:absolute;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle,#fff8c4,#ffd26b);opacity:0.06;filter:blur(6px);pointer-events:none}
+
+    /* Footer small share hint */
+    .footer{position:absolute;bottom:6px;width:100%;text-align:center;font-size:12px;color:#ffeab0;opacity:0.9}
+
+    /* Make text visible after JS triggers 'visible' class */
+    .visible .message{opacity:1;transform:none}
+
+    /* Responsive tweaks */
+    @media (max-width:420px){.card{max-width:420px;border-radius:8px}.message{font-size:16px}.diya{width:56px;height:56px}}
+  </style>
+</head>
+<body>
+  <div class="card" id="card">
+
+    <!-- Rangoli SVG at bottom -->
+    <svg class="rangoli" viewBox="0 0 800 140" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMax meet">
+      <defs>
+        <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stop-color="#ffd36b" stop-opacity="0.95"/>
+          <stop offset="100%" stop-color="#ff6b88" stop-opacity="0.3"/>
+        </radialGradient>
+      </defs>
+      <g transform="translate(0,10)">
+        <circle cx="400" cy="50" r="50" fill="url(#rg)" opacity="0.18"/>
+        <path d="M400 24c12 22 34 22 48 0 12-20 34-20 46 0 10 18 36 18 48 0" fill="none" stroke="#ffd36b" stroke-width="6" stroke-linecap="round" stroke-opacity="0.18"/>
+      </g>
+    </svg>
+
+    <!-- animated diyas -->
+    <div class="diya" aria-hidden="true"></div>
+    <div class="diya d2" aria-hidden="true"></div>
+
+    <!-- Fireworks canvas -->
+    <canvas id="fw" class="fireworks" aria-hidden="true"></canvas>
+
+    <!-- Sparkles layer -->
+    <div class="sparkles" id="sparkles" aria-hidden="true"></div>
+
+    <div class="content" role="main" aria-label="धनतेरस की शुभकामनाएं">
+      <div class="glow warm-glow message" id="message">
+आदरणीय ! 🙏
+आपको धनतेरस की हार्दिक शुभकामनाएं !!💐
+
+प्रार्थना करते हैं कि माँ लक्ष्मी और भगवान धनवंतरि आपके जीवन को स्वास्थ्य, समृद्धि और खुशहाली से आलोकित करें। 🙏
+
+शुभेच्छु
+रामनारायण मीणा
+      </div>
+    </div>
+
+    <div class="footer">✨ Share on WhatsApp • Instagram • Messages ✨</div>
+
+    <!-- YouTube music (shorts) embed: autoplay and loop. Note: some browsers may block autoplay — a tap will always start playback on mobile.) -->
+    <iframe id="yt" width="0" height="0" style="display:none" src="https://www.youtube.com/embed/WOyfoxN_bpY?autoplay=1&loop=1&playlist=WOyfoxN_bpY&controls=0&rel=0&modestbranding=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+  </div>
+
+  <script>
+    // Duration control (auto-stop after ~18 seconds) and overall sequence
+    const DURATION_MS = 18000; // 18 seconds
+    const card = document.getElementById('card');
+    const message = document.getElementById('message');
+
+    // Soft fade-in of text after 900ms for cinematic effect
+    setTimeout(()=>{card.classList.add('visible')},900);
+
+    // Sparkles: random positions around center text
+    const sparkles = document.getElementById('sparkles');
+    function makeSpark(x,y,delay,scale=1){
+      const s = document.createElement('div');
+      s.className='spark';
+      s.style.left = x + '%';
+      s.style.top = y + '%';
+      s.style.animationDelay = delay + 's';
+      s.style.transform = 'scale('+scale+')';
+      sparkles.appendChild(s);
+      setTimeout(()=>s.remove(), (DURATION_MS/1000 + 3)*1000);
+    }
+    // populate sparkles around center
+    for(let i=0;i<20;i++){ 
+      const x = 45 + (Math.random()*20-10);
+      const y = 38 + (Math.random()*18-9);
+      makeSpark(x,y,Math.random()*2, 0.6+Math.random()*1.2);
+    }
+
+    // Floating orbs
+    for(let i=0;i<6;i++){ 
+      const orb = document.createElement('div');
+      orb.className='float-orb';
+      orb.style.left = (10 + Math.random()*80) + '%';
+      orb.style.top = (10 + Math.random()*60) + '%';
+      orb.style.opacity = (0.03 + Math.random()*0.08).toFixed(2);
+      orb.style.width = (10 + Math.random()*26) + 'px';
+      orb.style.height = orb.style.width;
+      orb.style.animation = `floatOrb${i} 7s ease-in-out ${Math.random()*2}s infinite`;
+      document.getElementById('card').appendChild(orb);
+      const keyframes = `@keyframes floatOrb${i}{0%{transform:translateY(0)}50%{transform:translateY(-12px) translateX(6px)}100%{transform:translateY(0)}}`;
+      const style = document.createElement('style'); style.innerHTML = keyframes; document.head.appendChild(style);
+    }
+
+    // Basic fireworks system optimized for card size
+    (function(){
+      const canvas = document.getElementById('fw');
+      const ctx = canvas.getContext('2d');
+      function resize(){canvas.width = canvas.clientWidth*devicePixelRatio; canvas.height = canvas.clientHeight*devicePixelRatio; ctx.scale(devicePixelRatio, devicePixelRatio);}
+      resize(); window.addEventListener('resize', resize);
+      let rockets = [];
+      function launch(){
+        rockets.push({x: Math.random()*card.clientWidth, y: card.clientHeight, tx: card.clientHeight*0.35+Math.random()*card.clientHeight*0.25, vy: - (3+Math.random()*3), color: `hsl(${Math.floor(Math.random()*360)},85%,60%)`, sparks: []});
+      }
+      function update(){
+        ctx.clearRect(0,0,card.clientWidth,card.clientHeight);
+        rockets.forEach((r,i)=>{
+          // draw rocket
+          ctx.beginPath(); ctx.fillStyle = r.color; ctx.arc(r.x, r.y, 3, 0, Math.PI*2); ctx.fill();
+          r.y += r.vy;
+          r.vy += 0.06; // gravity slow-down for ascent
+          if(r.y <= r.tx){
+            // explode
+            for(let j=0;j<30;j++){ 
+              r.sparks.push({x:r.x,y:r.y,angle:Math.random()*Math.PI*2, speed:1+Math.random()*4, life:1- Math.random()*0.6, color:r.color});
+            }
+            rockets.splice(i,1);
+          }
+          // draw sparks
+          r.sparks.forEach((s,k)=>{
+            s.x += Math.cos(s.angle)*s.speed;
+            s.y += Math.sin(s.angle)*s.speed + 0.4; // gravity on sparks
+            s.life -= 0.02;
+            ctx.fillStyle = s.color.replace('hsl','hsla').replace(')',','+(Math.max(0,s.life))+')');
+            ctx.fillRect(s.x-1,s.y-1,2,2);
+            if(s.life<=0) r.sparks.splice(k,1);
+          });
+        });
+      }
+      let last = Date.now();
+      function loop(){
+        const now = Date.now();
+        if(Math.random() < 0.08) launch();
+        update();
+        if(Date.now() - last < DURATION_MS) requestAnimationFrame(loop);
+      }
+      loop();
+    })();
+
+    // Stop or fade out after DURATION_MS
+    setTimeout(()=>{
+      // fade out message and fireworks
+      card.style.transition = 'opacity 1s ease'; card.style.opacity = '0';
+      // pause youtube by removing iframe (keeps things simple and avoids autoplay quirks post-close)
+      const yt = document.getElementById('yt'); if(yt) yt.remove();
+    }, DURATION_MS + 1200);
+
+    // Accessibility: allow tap to start sound if autoplay blocked
+    card.addEventListener('click', ()=>{
+      const ytFrame = document.getElementById('yt');
+      if(ytFrame){ try { ytFrame.style.display='block'; } catch(e){} }
+    }, {passive:true});
+
+    // Make sure card is sized for screenshot / share: we will not convert to a true video here but provide the HTML card that plays for ~18s
+  </script>
+</body>
+</html>
